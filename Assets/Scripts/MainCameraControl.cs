@@ -4,15 +4,27 @@ using UnityEngine;
 
 public class MainCameraControl : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public float m_TurnSpeed = 200f;
+    public float m_AngleX = 15f;
+    public float m_AngleZ = 0f;
+    private float m_TurnInputValue;
+
+    private void Update()
     {
-        
+        m_TurnInputValue = Input.GetAxis("Horizontal Camera");
     }
 
-    // Update is called once per frame
-    void Update()
+    private void FixedUpdate()
     {
-        
+        Turn();
+    }
+
+    private void Turn()
+    {
+        float turn = m_TurnInputValue * m_TurnSpeed * Time.deltaTime;
+
+        Quaternion turnRotation = Quaternion.Euler(m_AngleX, transform.localEulerAngles.y + turn, m_AngleZ);
+
+        transform.localRotation = turnRotation;
     }
 }
