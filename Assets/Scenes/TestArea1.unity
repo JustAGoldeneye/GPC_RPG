@@ -307,6 +307,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5339def6857da648950099d1f95db78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_MoveSpeed: 30
+  m_TurnSpeed: 200
+  m_AngleX: 15
+  m_AngleZ: 0
 --- !u!1 &1147183142 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8422892626600285392, guid: 214e08cd5e5d74c458e2a81b7ec2c84c,
