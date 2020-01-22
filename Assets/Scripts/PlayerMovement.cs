@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float m_Speed =10f;
+    public float m_Speed = 10f;
+    public float m_TurnSpeed = 300f;
     
-    private float m_MovementInputValueForward;
-    private float m_MovementInputValueRight;
+    private float m_MovementInputValue;
+    private float m_TurnInputValue;
 
     private Rigidbody m_Rigidbody;
 
@@ -18,20 +19,38 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        m_MovementInputValueForward = Input.GetAxis("Vertical");
-        m_MovementInputValueRight = Input.GetAxis("Horizontal");
+        float VerticalInput = Input.GetAxis("Vertical");
+        float HorizontalInput = Input.GetAxis("Horizontal");
+
+        if (Mathf.Abs(VerticalInput) >= Mathf.Abs(HorizontalInput)) {
+            m_MovementInputValue = VerticalInput;
+        } else {
+            m_MovementInputValue = Mathf.Abs(HorizontalInput);
+        }
+        
+        //m_MovementInputValue = Mathf.Max(Input.GetAxis("Vertical"), Input.GetAxis("Horizontal"));
+        m_TurnInputValue = Input.GetAxis("Horizontal");
     }
 
     private void FixedUpdate()
     {
         Move();
+        Turn();
     }
 
     private void Move()
     {
-        Vector3 movementForward = transform.forward * m_MovementInputValueForward * m_Speed * Time.deltaTime;
-        Vector3 movementRight = transform.right * m_MovementInputValueRight * m_Speed * Time.deltaTime;
+        Vector3 movement = transform.forward * m_MovementInputValue * m_Speed * Time.deltaTime;
 
-        m_Rigidbody.MovePosition(m_Rigidbody.position + movementForward + movementRight);
+        m_Rigidbody.MovePosition(m_Rigidbody.position + movement);
+    }
+
+    private void Turn()
+    {
+        float turn = m_TurnInputValue * m_TurnSpeed * Time.deltaTime;
+
+        Quaternion turnRotatiom = Quaternion.Euler(0f, turn, 0f);
+
+        m_Rigidbody.MoveRotation(m_Rigidbody.rotation * turnRotatiom);
     }
 }
