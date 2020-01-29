@@ -9,24 +9,29 @@ public class MainCameraControl : MonoBehaviour
     public float m_AngleX = 15f;
     public float m_AngleZ = 0f;
     private float m_TurnInputValue;
+    private Transform Player;
 
     //private Rigidbody m_Rigidbody;
 
     /*private void Awake() {
-        m_Rigidbody = GetComponent<Rigidbody>();
+        //m_Rigidbody = GetComponent<Rigidbody>();
     }*/
 
     private void Update()
     {
         m_TurnInputValue = Input.GetAxis("Horizontal Camera");
+
+        //transform.position = transform.forward * 4 + Player.position;
     }
 
     private void FixedUpdate()
     {   
         //Debug.Log("Horizontal Camera (input value): " + m_TurnInputValue);
 
-        Turn();
-        MoveWhileTurning();
+        //Turn();
+        //MoveWhileTurning();
+
+        transform.RotateAround(transform.parent.position ,Vector3.up, -1 * m_TurnInputValue * m_TurnSpeed * Time.deltaTime);
     }
 
     private void Turn()
