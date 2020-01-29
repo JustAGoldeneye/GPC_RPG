@@ -22,14 +22,16 @@ public class MainCameraControl : MonoBehaviour
     }
 
     private void FixedUpdate()
-    {
+    {   
+        //Debug.Log("Horizontal Camera (input value): " + m_TurnInputValue);
+
         Turn();
         MoveWhileTurning();
     }
 
     private void Turn()
     {
-        float turn = m_TurnInputValue * m_TurnSpeed * Time.deltaTime;
+        float turn = -1 * m_TurnInputValue * m_TurnSpeed * Time.deltaTime;
 
         //Quaternion rotation = Quaternion.Euler(0f, turn, 0f);
         Quaternion rotation = Quaternion.Euler(m_AngleX, transform.localEulerAngles.y + turn, m_AngleZ);
@@ -40,10 +42,15 @@ public class MainCameraControl : MonoBehaviour
 
     private void MoveWhileTurning()
     {
-        Vector3 movement = -1 * transform.right * m_TurnInputValue * m_MoveSpeed * Time.deltaTime;
+        Vector3 movement = transform.right * m_TurnInputValue * m_MoveSpeed * Time.deltaTime;
 
         //m_Rigidbody.MovePosition(m_Rigidbody.position + movement);
         transform.localPosition = transform.localPosition + movement;
         //huono ratkaisu, koska pakenee
+    }
+
+    private void ResetCamera()
+    {
+        //TODO
     }
 }
