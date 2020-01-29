@@ -19,7 +19,7 @@ public class MainCameraControl : MonoBehaviour
 
     private void RoateCamera()
     {
-        transform.RotateAround(transform.parent.position ,Vector3.up, -1 * m_TurnInputValue * m_TurnSpeed * Time.deltaTime);
+        transform.RotateAround(transform.parent.position, Vector3.up, -1 * m_TurnInputValue * m_TurnSpeed * Time.deltaTime);
     }
 
     private void ResetCamera()
