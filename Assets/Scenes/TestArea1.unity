@@ -308,7 +308,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_MoveSpeed: 30
-  m_TurnSpeed: 200
+  m_TurnSpeed: 300
   m_AngleX: 15
   m_AngleZ: 0
 --- !u!1 &1147183142 stripped

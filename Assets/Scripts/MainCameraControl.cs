@@ -10,6 +10,12 @@ public class MainCameraControl : MonoBehaviour
     public float m_AngleZ = 0f;
     private float m_TurnInputValue;
 
+    //private Rigidbody m_Rigidbody;
+
+    /*private void Awake() {
+        m_Rigidbody = GetComponent<Rigidbody>();
+    }*/
+
     private void Update()
     {
         m_TurnInputValue = Input.GetAxis("Horizontal Camera");
@@ -25,8 +31,10 @@ public class MainCameraControl : MonoBehaviour
     {
         float turn = m_TurnInputValue * m_TurnSpeed * Time.deltaTime;
 
+        //Quaternion rotation = Quaternion.Euler(0f, turn, 0f);
         Quaternion rotation = Quaternion.Euler(m_AngleX, transform.localEulerAngles.y + turn, m_AngleZ);
 
+        //m_Rigidbody.MoveRotation(m_Rigidbody.rotation * rotation);
         transform.localRotation = rotation;
     }
 
@@ -34,7 +42,8 @@ public class MainCameraControl : MonoBehaviour
     {
         Vector3 movement = -1 * transform.right * m_TurnInputValue * m_MoveSpeed * Time.deltaTime;
 
+        //m_Rigidbody.MovePosition(m_Rigidbody.position + movement);
         transform.localPosition = transform.localPosition + movement;
-        //huono ratkaisu, kääntyy väärään suuntaan ja pakenee
+        //huono ratkaisu, koska pakenee
     }
 }
