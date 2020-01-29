@@ -32,7 +32,7 @@ public class MainCameraControl : MonoBehaviour
 
     private void MoveWhileTurning()
     {
-        Vector3 movement = transform.right * m_TurnInputValue * m_MoveSpeed * Time.deltaTime;
+        Vector3 movement = -1 * transform.right * m_TurnInputValue * m_MoveSpeed * Time.deltaTime;
 
         transform.localPosition = transform.localPosition + movement;
         //huono ratkaisu, kääntyy väärään suuntaan ja pakenee
