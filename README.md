@@ -2,6 +2,15 @@
 
 [Work hour log](https://docs.google.com/spreadsheets/d/1qLNH6v6nsS0cSMAlTaJ9XpoMpUm4Qp9qEh6FqLgrrAQ/edit?usp=sharing)
 
+## Controls
+
+* W - Walk forward
+* A - Turn left
+* D - Turn right
+* Q - Turn camera left
+* E - Turn camera right
+* R - Reset camera position
+
 ## Imported Assets
 
 [Free Trees](https://assetstore.unity.com/packages/3d/vegetation/trees/free-trees-103208) by Darth_Artisan
