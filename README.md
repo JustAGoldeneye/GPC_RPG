@@ -10,6 +10,7 @@
 * Q - Turn camera left
 * E - Turn camera right
 * R - Reset camera position
+* SPACE - Jump
 
 ## Imported Assets
 

@@ -4,17 +4,24 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float m_Speed = 10f;
+    public float m_Speed = 20f;
     public float m_TurnSpeed = 300f;
-    
+    public float m_JumpSpeed = 20f;
+    public float m_JumpTime = 1f; // in seconds
+
     private float m_MovementInputValue;
     private float m_TurnInputValue;
+    private float m_JumpStartTime;
+    private bool m_IsGrounded;
+    private bool m_IsJumping;
 
     private Rigidbody m_Rigidbody;
+    private Collider m_Collider;
 
     private void Awake()
     {
         m_Rigidbody = GetComponent<Rigidbody>();
+        m_Collider = GetComponent<Collider>();
     }
 
     private void Update()
@@ -27,15 +34,37 @@ public class PlayerMovement : MonoBehaviour
         } else {
             m_MovementInputValue = Mathf.Abs(HorizontalInput);
         }
-        
-        //m_MovementInputValue = Mathf.Max(Input.GetAxis("Vertical"), Input.GetAxis("Horizontal"));
         m_TurnInputValue = Input.GetAxis("Horizontal");
     }
 
     private void FixedUpdate()
     {
         Move();
+
+        if (Input.GetButton("Jump") && (m_IsGrounded || ((Time.time - m_JumpStartTime <= m_JumpTime && m_IsJumping))))
+        {
+            Jump();
+        } else {
+            m_IsJumping = false;
+        }
+
         Turn();
+    }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Ground")
+        {
+            m_IsGrounded = true;
+        }
+    }
+
+    void OnCollisionExit(Collision collision)
+    {
+        if (collision.gameObject.tag == "Ground")
+        {
+            m_IsGrounded = false;
+        }
     }
 
     private void Move()
@@ -43,6 +72,19 @@ public class PlayerMovement : MonoBehaviour
         Vector3 movement = transform.forward * m_MovementInputValue * m_Speed * Time.deltaTime;
 
         m_Rigidbody.MovePosition(m_Rigidbody.position + movement);
+    }
+
+    private void Jump()
+    {
+        if (m_IsGrounded)
+        {
+            m_IsJumping = true;
+            m_JumpStartTime = Time.time;
+        }
+
+        Vector3 upMovement = transform.up * m_JumpSpeed * Time.deltaTime;
+
+        m_Rigidbody.MovePosition(m_Rigidbody.position + upMovement);
     }
 
     private void Turn()

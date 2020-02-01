@@ -14,10 +14,11 @@ public class MainCameraControl : MonoBehaviour
 
     private void LateUpdate()
     {   
+        RoateCamera();
+
         if (Input.GetButtonDown("Reset Camera")) {
             ResetCamera();
         }
-        RoateCamera();
     }
 
     private void RoateCamera()

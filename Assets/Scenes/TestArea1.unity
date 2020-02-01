@@ -307,10 +307,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5339def6857da648950099d1f95db78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_MoveSpeed: 30
   m_TurnSpeed: 300
-  m_AngleX: 15
-  m_AngleZ: 0
 --- !u!1 &1147183142 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8422892626600285392, guid: 214e08cd5e5d74c458e2a81b7ec2c84c,
@@ -360,6 +357,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Speed: 20
   m_TurnSpeed: 300
+  m_JumpSpeed: 20
+  m_JumpTime: 1
 --- !u!4 &1147183147 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8422892626600249584, guid: 214e08cd5e5d74c458e2a81b7ec2c84c,
@@ -547,7 +546,7 @@ GameObject:
   - component: {fileID: 1760761638}
   m_Layer: 0
   m_Name: Ground
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
