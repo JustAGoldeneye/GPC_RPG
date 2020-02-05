@@ -26,14 +26,17 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        float VerticalInput = Input.GetAxis("Vertical");
+        // Old m_MovementInputValue code, should be removed when it is certain that it is unneccessary.
+        /*float VerticalInput = Input.GetAxis("Vertical");
         float HorizontalInput = Input.GetAxis("Horizontal");
 
         if (Mathf.Abs(VerticalInput) >= Mathf.Abs(HorizontalInput)) {
             m_MovementInputValue = VerticalInput;
         } else {
             m_MovementInputValue = Mathf.Abs(HorizontalInput);
-        }
+        }*/
+
+        m_MovementInputValue = Input.GetAxis("Vertical");
         m_TurnInputValue = Input.GetAxis("Horizontal");
     }
 
