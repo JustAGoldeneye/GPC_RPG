@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PlayerStatsControl : MonoBehaviour
+public class FighterStatsControl : MonoBehaviour
 {
     public int m_MaxHP = 20;
 
@@ -15,15 +15,6 @@ public class PlayerStatsControl : MonoBehaviour
     {
         m_HP = m_MaxHP;
         SetPlayerHPCounterText();
-    }
-
-    // TEMPORARY SOLUTION
-    void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.tag == "Hazard")
-        {
-            TakeDamage(5);
-        }
     }
 
     public void TakeDamage(int damage)
