@@ -26,7 +26,7 @@ public class FighterStatsControl : MonoBehaviour
 
     void SetPlayerHPCounterText()
     {
-        m_PlayerHPCounterText.text = "HP: " + m_HP + "/" + m_MaxHP;
+        m_PlayerHPCounterText.text = "HP " + m_HP + "/" + m_MaxHP;
     }
 
     void OnDeath()

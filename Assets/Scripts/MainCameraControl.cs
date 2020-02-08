@@ -7,6 +7,15 @@ public class MainCameraControl : MonoBehaviour
     public float m_TurnSpeed = 200f;
     private float m_TurnInputValue;
 
+    private Vector3 m_LocalStartPos;
+    private Quaternion m_LocalStartRot;
+
+    private void Start()
+    {
+        m_LocalStartPos = gameObject.transform.localPosition;
+        m_LocalStartRot = gameObject.transform.localRotation;
+    }
+
     private void Update()
     {
         m_TurnInputValue = Input.GetAxis("Horizontal Camera");
@@ -28,7 +37,7 @@ public class MainCameraControl : MonoBehaviour
 
     private void ResetCamera()
     {
-        transform.localPosition = new Vector3(0f, 2.5f, -4f);
-        transform.localRotation = Quaternion.Euler(15f, 0f, 0f);
+        transform.localPosition = m_LocalStartPos;
+        transform.localRotation = m_LocalStartRot;
     }
 }
