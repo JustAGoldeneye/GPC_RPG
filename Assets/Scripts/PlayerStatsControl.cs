@@ -20,15 +20,26 @@ public class PlayerStatsControl : MonoBehaviour
     // TEMPORARY SOLUTION
     void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "Hazard" && m_HP >= 1)
+        if (collision.gameObject.tag == "Hazard")
         {
-            m_HP--;
-            SetPlayerHPCounterText();
+            TakeDamage(5);
         }
+    }
+
+    public void TakeDamage(int damage)
+    {
+        m_HP -= damage;
+        SetPlayerHPCounterText();
+        OnDeath();
     }
 
     void SetPlayerHPCounterText()
     {
         m_PlayerHPCounterText.text = "HP: " + m_HP + "/" + m_MaxHP;
+    }
+
+    void OnDeath()
+    {
+        Debug.Log("OnDeath not imtplemented yet");
     }
 }
