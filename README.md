@@ -4,6 +4,8 @@
 
 ## Controls
 
+### Gameplay Controls
+
 * W - Walk forward
 * A - Turn left
 * D - Turn right
@@ -11,6 +13,8 @@
 * E - Turn camera right
 * R - Reset camera position
 * SPACE - Jump
+
+### Menu Controls (Including Battle Menu)
 
 * Arrow keys - Navigate on UI
 * Enter - Confirm
