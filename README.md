@@ -12,6 +12,10 @@
 * R - Reset camera position
 * SPACE - Jump
 
+* Arrow keys - Navigate on UI
+* Enter - Confirm
+* Backspace - Cancel
+
 ## Imported Assets
 
 [Free Trees](https://assetstore.unity.com/packages/3d/vegetation/trees/free-trees-103208) by Darth_Artisan
