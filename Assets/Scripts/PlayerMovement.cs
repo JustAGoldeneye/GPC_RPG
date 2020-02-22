@@ -54,7 +54,7 @@ public class PlayerMovement : MonoBehaviour
         Turn();
     }
 
-    void OnCollisionEnter(Collision collision)
+    private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "Ground")
         {
@@ -62,7 +62,7 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    void OnCollisionExit(Collision collision)
+    private void OnCollisionExit(Collision collision)
     {
         if (collision.gameObject.tag == "Ground")
         {
