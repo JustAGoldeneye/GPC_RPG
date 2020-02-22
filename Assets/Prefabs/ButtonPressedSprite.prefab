@@ -157,6 +157,7 @@ GameObject:
   - component: {fileID: 6393361072568103240}
   - component: {fileID: 1524727275406372891}
   - component: {fileID: 2590748417266292152}
+  - component: {fileID: -7750838321061002760}
   m_Layer: 5
   m_Name: ButtonPressedSprite
   m_TagString: Untagged
@@ -223,6 +224,18 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &-7750838321061002760
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6393361072568103241}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0398254ce124db44393975f668cfbfbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6393361073535600370
 GameObject:
   m_ObjectHideFlags: 0

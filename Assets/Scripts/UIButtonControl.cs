@@ -16,9 +16,9 @@ public class UIButtonControl : MonoBehaviour
 
     public void ShowSelection()
     {
-        Image m_ButtonPressedImageInstance = Image.Instantiate(m_ButtonPressedImage, Vector3.zero, Quaternion.identity, GameObject.FindGameObjectWithTag("UI").transform);
+        Image m_ButtonPressedImageInstance = Image.Instantiate(m_ButtonPressedImage, transform.position, Quaternion.identity, GameObject.FindGameObjectWithTag("UI").transform);
         // Luodaan jonkinlainen valintaa osoittava UI-objekti painikkeen suhteellisen
         // sijainnin kohdalle (anna julkisen muuttujan määritteeksi prefab).
-        // Objekti tuhoaa itsensä määritellyn ajan päästä.
+        // Objekti tuhoaa itsensä määritellyn ajan päästä. jonkinlainen este tällaisten ilmestymiseen kun on jo yksi?
     }
 }
