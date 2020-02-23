@@ -44,7 +44,7 @@ public class PlayerMovement : MonoBehaviour
     {
         Move();
 
-        if (Input.GetButton("Jump") && (m_IsGrounded || ((Time.time - m_JumpStartTime <= m_JumpTime && m_IsJumping))))
+        if (Input.GetButton("Jump") && (m_IsGrounded || ((Time.time - m_JumpStartTime < m_JumpTime && m_IsJumping))))
         {
             Jump();
         } else {
