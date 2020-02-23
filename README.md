@@ -13,6 +13,7 @@
 * E - Turn camera right
 * R - Reset camera position
 * SPACE - Jump
+* RIGHT CONTROL - Normal attack
 
 ### Menu Controls (Including Battle Menu)
 
