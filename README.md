@@ -12,12 +12,12 @@
 * Q - Turn camera left
 * E - Turn camera right
 * R - Reset camera position
-* SPACE - Jump
-* RIGHT CONTROL - Normal attack
+* Space - Jump
+* Right Control - Normal attack
 
 ### Menu Controls (Including Battle Menu)
 
-* Arrow keys - Navigate on UI
+* Arrow Keys - Navigate on UI
 * Enter - Confirm
 * Backspace - Cancel
 
