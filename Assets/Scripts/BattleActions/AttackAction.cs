@@ -14,13 +14,13 @@ public class AttackAction : MonoBehaviour
 
     public Collider m_Attack;
     public Slider m_CooldownSlider;
-    public Text m_ActionNameTetx;
+    public Text m_ActionNameText;
 
     private float m_ActionStartTime = -10f;
 
     private void Start()
     {
-        m_ActionNameTetx.text = m_ActionName;
+        m_ActionNameText.text = m_ActionName;
         m_CooldownSlider.maxValue = m_CooldownTime;
         m_CooldownSlider.value = m_CooldownTime;
     }
@@ -35,7 +35,6 @@ public class AttackAction : MonoBehaviour
         if (Time.time - m_ActionStartTime >= m_CooldownTime)
         {
             Collider m_AttackInstance = Collider.Instantiate(m_Attack, transform.position, transform.rotation);
-            m_ActionStartTime = Time.time;
             m_AttackInstance.transform.parent = gameObject.transform;
             m_AttackInstance.transform.localPosition = new Vector3(m_AttackPosX, m_AttackPosY, m_AttackPosZ);
 
@@ -43,6 +42,9 @@ public class AttackAction : MonoBehaviour
             {
                 m_AttackInstance.transform.parent = null;
             }
+            
+            m_AttackInstance.GetComponent<AttackControl>().m_Damage += gameObject.GetComponentInParent<FighterStatsControl>().m_Atk;
+            m_ActionStartTime = Time.time;
         }
     }
 }
