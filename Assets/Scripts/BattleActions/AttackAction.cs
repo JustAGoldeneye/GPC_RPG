@@ -9,6 +9,7 @@ public class AttackAction : MonoBehaviour
     public float m_AttackPosX = 0f;
     public float m_AttackPosY = 0f;
     public float m_AttackPosZ = 0f;
+    public bool m_MakeFightersChild = true;
     public string m_ActionName = "Unnamed action";
 
     public Collider m_Attack;
@@ -33,10 +34,15 @@ public class AttackAction : MonoBehaviour
     {
         if (Time.time - m_ActionStartTime >= m_CooldownTime)
         {
-            Collider m_SwordAttack1Instance = Collider.Instantiate(m_Attack, transform.position + new Vector3(m_AttackPosX, m_AttackPosY, m_AttackPosZ), transform.rotation);
+            Collider m_AttackInstance = Collider.Instantiate(m_Attack, transform.position, transform.rotation);
             m_ActionStartTime = Time.time;
+            m_AttackInstance.transform.parent = gameObject.transform;
+            m_AttackInstance.transform.localPosition = new Vector3(m_AttackPosX, m_AttackPosY, m_AttackPosZ);
 
-            // Add animations etc. here
+            if (!m_MakeFightersChild)
+            {
+                m_AttackInstance.transform.parent = null;
+            }
         }
     }
 }
