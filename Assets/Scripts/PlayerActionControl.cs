@@ -6,5 +6,13 @@ public class PlayerActionControl : MonoBehaviour
 {
     private float m_DefaultAttackInputValue;
 
-    //TODO
+    private void Update()
+    {
+        m_DefaultAttackInputValue = Input.GetAxis("Normal Attack");
+    }
+
+    private void FixedUpdate()
+    {
+        
+    }
 }
