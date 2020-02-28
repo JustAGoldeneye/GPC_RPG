@@ -1018,7 +1018,7 @@ GameObject:
   - component: {fileID: 814131375}
   - component: {fileID: 814131376}
   m_Layer: 5
-  m_Name: BasicAttackCooldownTimer
+  m_Name: AttackNormalCooldownTimer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1662,19 +1662,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 1147183142}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f6975fd576d62514bb8657ce4286695b, type: 3}
+  m_Script: {fileID: 11500000, guid: 822c23b8dad806648842a17afb0c9a5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_CooldownTime: 5
+  m_CooldownTime: 1
   m_AttackPosX: 0.75
   m_AttackPosY: 0.687
   m_AttackPosZ: 0.637
   m_MakeFightersChild: 1
-  m_ActionName: Generic Power Slash
-  m_Attack: {fileID: 4747371168208267812, guid: 6c384a600fc47a3449780af744500f9d,
+  m_ActionName: Default Attack
+  m_Attack: {fileID: 7862617344504304618, guid: db7decdeff0ff574c829b5e9c289863c,
     type: 3}
-  m_CooldownSlider: {fileID: 1712667612}
-  m_ActionNameText: {fileID: 1850640072}
+  m_CooldownSlider: {fileID: 814131376}
+  m_ActionNameText: {fileID: 1337045459}
 --- !u!114 &1147183149
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1687,6 +1687,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc2ce3e6f7c829b49af5a481c0dc572a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1147183150
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1147183142}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68b8a532a38640044a30c7afca22c46a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_CooldownTime: 5
+  m_AttackPosX: 0.75
+  m_AttackPosY: 0.687
+  m_AttackPosZ: 0.637
+  m_MakeFightersChild: 1
+  m_ActionName: Generic Power Slash
+  m_Attack: {fileID: 4747371168208267812, guid: 6c384a600fc47a3449780af744500f9d,
+    type: 3}
+  m_CooldownSlider: {fileID: 1712667612}
+  m_ActionNameText: {fileID: 1850640072}
 --- !u!1001 &1237079916
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1865,7 +1887,7 @@ GameObject:
   - component: {fileID: 1337045460}
   - component: {fileID: 1337045459}
   m_Layer: 5
-  m_Name: BasicAttackName
+  m_Name: AttackNormalName
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2607,7 +2629,12 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 1147183148}
+      objectReference: {fileID: 1147183150}
+    - target: {fileID: 3179367838723426299, guid: 03b4bda7df993964fb2e1ef2ce79d5ec,
+        type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: Execute
+      objectReference: {fileID: 0}
     - target: {fileID: 7241401934149076457, guid: 03b4bda7df993964fb2e1ef2ce79d5ec,
         type: 3}
       propertyPath: m_LocalPosition.x

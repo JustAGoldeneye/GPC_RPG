@@ -2,10 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
+A new subclass of this script (or some of its subclasses) should NOT be created when added to a game object.
+*/
+
 public class AttackControl : MonoBehaviour
 {
     public int m_Damage = 3;
-    public int m_MaxLifeTime = 1;
+    public float m_MaxLifeTime = 1;
     public string m_AttackTarget = "Enemy";
 
     public LayerMask m_TargetMask;

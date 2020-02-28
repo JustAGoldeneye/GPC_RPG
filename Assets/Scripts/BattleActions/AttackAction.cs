@@ -3,6 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/*
+A new subclass of this script (or some of its subclasses) should always be created when added to a game object
+as the same game object may several instances of this script.
+*/
+
 public class AttackAction : MonoBehaviour
 {
     public float m_CooldownTime = 2f;
@@ -16,10 +21,11 @@ public class AttackAction : MonoBehaviour
     public Slider m_CooldownSlider;
     public Text m_ActionNameText;
 
-    private float m_ActionStartTime = -10f;
+    private float m_ActionStartTime;
 
     private void Start()
     {
+        m_ActionStartTime = Time.time;
         m_ActionNameText.text = m_ActionName;
         m_CooldownSlider.maxValue = m_CooldownTime;
         m_CooldownSlider.value = m_CooldownTime;

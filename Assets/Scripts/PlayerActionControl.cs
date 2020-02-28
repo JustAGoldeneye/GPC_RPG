@@ -4,15 +4,17 @@ using UnityEngine;
 
 public class PlayerActionControl : MonoBehaviour
 {
-    private float m_DefaultAttackInputValue;
+    private float m_AttackNormalInputValue;
 
     private void Update()
     {
-        m_DefaultAttackInputValue = Input.GetAxis("Normal Attack");
+        m_AttackNormalInputValue = Input.GetAxis("Normal Attack");
     }
 
     private void FixedUpdate()
     {
-        
+        if (m_AttackNormalInputValue > 0) {
+            gameObject.GetComponent<PlayerAttackNormalAction>().Execute();
+        }
     }
 }
