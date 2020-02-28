@@ -407,7 +407,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_MaxHP: 100
   m_Atk: 3
-  m_Def: 1
+  m_Def: 2
   m_PlayerHPCounterText: {fileID: 7682079002628895010}
 --- !u!1 &7682079001787286935
 GameObject:
