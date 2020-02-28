@@ -2,22 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-/*
-A new subclass of this script (or some of its subclasses) should always be created when added to a game object
-as this class doesn't contain input value/state updating.
-*/
-
-public class CharacterMovement : MonoBehaviour
+public class PlayerMovement : MonoBehaviour
 {
     public float m_Speed = 20f;
     public float m_TurnSpeed = 300f;
     public float m_JumpSpeed = 20f;
     public float m_JumpTime = 1f;
 
-    protected float m_MovementInputValue;
-    protected float m_TurnInputValue;
+    private float m_MovementInputValue;
+    private float m_TurnInputValue;
     private float m_JumpStartTime;
-    protected bool m_JumpInputState;
+    private bool m_JumpInputState;
     private bool m_IsGrounded;
     private bool m_IsJumping;
 
@@ -28,6 +23,13 @@ public class CharacterMovement : MonoBehaviour
     {
         m_Rigidbody = GetComponent<Rigidbody>();
         m_Collider = GetComponent<Collider>();
+    }
+
+    private void Update()
+    {
+        m_MovementInputValue = Input.GetAxis("Vertical");
+        m_TurnInputValue = Input.GetAxis("Horizontal");
+        m_JumpInputState = Input.GetButton("Jump");
     }
 
     private void FixedUpdate()

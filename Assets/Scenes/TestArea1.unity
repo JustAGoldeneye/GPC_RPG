@@ -2146,7 +2146,7 @@ PrefabInstance:
     - target: {fileID: 7682079001781235437, guid: 6ca0ee3cb9bdca84ca878a9aca3301f8,
         type: 3}
       propertyPath: m_Name
-      value: DragonEnemy-5Def
+      value: DragonEnemy
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6ca0ee3cb9bdca84ca878a9aca3301f8, type: 3}
