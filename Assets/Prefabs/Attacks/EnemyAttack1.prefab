@@ -105,6 +105,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9063512fcafa4847baa0eabaea4a723, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Damage: 2
+  m_Damage: 222
   m_MaxLifeTime: 1
   m_AttackTarget: Player

@@ -10,12 +10,14 @@ public class FighterStatsControl : MonoBehaviour
     public int m_Def = 0;
 
     private int m_HP;
+    private bool m_Dead;
     
     public Text m_PlayerHPCounterText;
 
     private void Start()
     {
         m_HP = m_MaxHP;
+        m_Dead = false;
         SetPlayerHPCounterText();
     }
 
@@ -24,11 +26,15 @@ public class FighterStatsControl : MonoBehaviour
         if (damage > m_Def)
         {
             m_HP -= damage - m_Def;
-            SetPlayerHPCounterText();
             if (m_HP <= 0)
             {
-                OnDeath();
+                m_HP = 0;
+                if (!m_Dead) {
+                    m_Dead = true;
+                    OnDeath();
+                }
             }
+            SetPlayerHPCounterText();
         }
     }
 

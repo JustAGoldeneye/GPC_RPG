@@ -5,6 +5,6 @@ using UnityEngine;
 public class PlayerStatsControl : FighterStatsControl
 {
     protected override void OnDeath() {
-        Debug.Log("Not implemented yet.");
+        GetComponent<GameOver>().Execute();
     }
 }
