@@ -2,4 +2,4 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerAttackNormalAction : PlayerAttackAction {}
+public class EnemyAttack2Action : EnemyAttackAction {}

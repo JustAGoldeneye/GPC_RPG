@@ -42,8 +42,9 @@ public class EnemyMovement : MonoBehaviour
             
             if (DistanceToPlayer() > m_BattleStayStillRange) {
                 Move();
-                // Contact attacking script from here ???
             }
+
+            GetComponent<EnemyActionControl>().ExecuteAttacksInRange(DistanceToPlayer());
         }
         else if (m_MoveOutsideBattle)
         {

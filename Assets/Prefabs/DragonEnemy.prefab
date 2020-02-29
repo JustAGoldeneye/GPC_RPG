@@ -322,6 +322,8 @@ GameObject:
   - component: {fileID: 7682079001781235438}
   - component: {fileID: 7682079001781235436}
   - component: {fileID: 954240801}
+  - component: {fileID: 842791339}
+  - component: {fileID: 842791340}
   m_Layer: 0
   m_Name: DragonEnemy
   m_TagString: Enemy
@@ -423,10 +425,47 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_DetectionRange: 30
-  m_BattleStayStillRange: 10
-  m_Speed: 10
+  m_BattleStayStillRange: 5
+  m_Speed: 5
   m_TurnSpeed: 3
+  m_MoveOutsideBattle: 1
+  m_MinWanderTime: 5
+  m_MaxWanderTime: 15
+  m_MinWanderWait: 3
+  m_MaxWanderWait: 20
   m_Player: {fileID: 0}
+--- !u!114 &842791339
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7682079001781235437}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56d8613d6b3323b46b362923223f36e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_CooldownTime: 2
+  m_AttackPosX: 0
+  m_AttackPosY: 0
+  m_AttackPosZ: 0
+  m_MakeFightersChild: 1
+  m_ActionName: Standard attack
+  m_Attack: {fileID: 912970106417230932, guid: 6a637b7a15b40d7499aeed80d790935b, type: 3}
+  m_ActivationDistance: 4
+--- !u!114 &842791340
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7682079001781235437}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a171f9014f585747852e2b1335d57f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7682079001787286935
 GameObject:
   m_ObjectHideFlags: 0

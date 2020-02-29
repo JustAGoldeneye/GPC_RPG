@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 /*
 A new subclass of this script (or some of its subclasses) should always be created when added to a game object
@@ -18,25 +17,15 @@ public class AttackAction : MonoBehaviour
     public string m_ActionName = "Unnamed action";
 
     public Collider m_Attack;
-    public Slider m_CooldownSlider;
-    public Text m_ActionNameText;
 
-    private float m_ActionStartTime;
+    protected float m_ActionStartTime;
 
     private void Start()
     {
         m_ActionStartTime = Time.time;
-        m_ActionNameText.text = m_ActionName;
-        m_CooldownSlider.maxValue = m_CooldownTime;
-        m_CooldownSlider.value = m_CooldownTime;
     }
 
-    private void Update()
-    {
-        m_CooldownSlider.value = Mathf.Min(Time.time - m_ActionStartTime, m_CooldownTime);
-    }
-
-    public void Execute()
+    public bool Execute()
     {
         if (Time.time - m_ActionStartTime >= m_CooldownTime)
         {
@@ -51,6 +40,10 @@ public class AttackAction : MonoBehaviour
             
             m_AttackInstance.GetComponent<AttackControl>().m_Damage += gameObject.GetComponentInParent<FighterStatsControl>().m_Atk;
             m_ActionStartTime = Time.time;
+
+            return true;
         }
+
+        return false;
     }
 }

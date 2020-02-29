@@ -6,11 +6,12 @@ public class EnemyAttackAction : AttackAction
 {
     public float m_ActivationDistance = 10f;
 
-    public void ExecuteIfInRange(float Distance)
+    public bool ExecuteIfInRange(float Distance)
     {
         if (Distance <= m_ActivationDistance)
-        {
-            Execute();
+        {            
+            return Execute();
         }
+        return false;
     }
 }
