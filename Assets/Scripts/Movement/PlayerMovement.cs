@@ -17,12 +17,10 @@ public class PlayerMovement : MonoBehaviour
     private bool m_IsJumping;
 
     private Rigidbody m_Rigidbody;
-    private Collider m_Collider;
 
     private void Awake()
     {
         m_Rigidbody = GetComponent<Rigidbody>();
-        m_Collider = GetComponent<Collider>();
     }
 
     private void Update()
