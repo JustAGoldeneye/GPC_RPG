@@ -12,8 +12,6 @@ public class AttackControl : MonoBehaviour
     public float m_MaxLifeTime = 1;
     public string m_AttackTarget = "Enemy";
 
-    public LayerMask m_TargetMask;
-
     private void Start()
     {
         Destroy(gameObject, m_MaxLifeTime);
@@ -21,7 +19,7 @@ public class AttackControl : MonoBehaviour
 
     private void OnTriggerEnter(Collider collider)
     {
-        if (collider.tag == m_AttackTarget)
+        if (collider.tag == m_AttackTarget || (m_AttackTarget == "All" && (collider.tag == "Player" || collider.tag == "Enemy")))
         {
             FighterStatsControl FSC = collider.GetComponent<FighterStatsControl>();
             if (FSC)
