@@ -108,6 +108,3 @@ MonoBehaviour:
   m_Damage: 0
   m_MaxLifeTime: 0.5
   m_AttackTarget: Enemy
-  m_TargetMask:
-    serializedVersion: 2
-    m_Bits: 0

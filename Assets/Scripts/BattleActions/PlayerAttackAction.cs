@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PlayerAttackAction : AttackAction
+public abstract class PlayerAttackAction : AttackAction
 {
 
     public Text m_ActionNameText;

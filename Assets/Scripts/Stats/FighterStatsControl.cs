@@ -32,13 +32,13 @@ public class FighterStatsControl : MonoBehaviour
         }
     }
 
-    void SetPlayerHPCounterText()
+    private void SetPlayerHPCounterText()
     {
         m_PlayerHPCounterText.text = "HP " + m_HP + "/" + m_MaxHP;
     }
 
-    void OnDeath()
+    protected virtual void OnDeath()
     {
-        Debug.Log("OnDeath not imtplemented yet");
+        Destroy(gameObject);
     }
 }

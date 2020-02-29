@@ -7,7 +7,7 @@ A new subclass of this script (or some of its subclasses) should always be creat
 as the same game object may several instances of this script.
 */
 
-public class AttackAction : MonoBehaviour
+public abstract class AttackAction : MonoBehaviour
 {
     public float m_CooldownTime = 2f;
     public float m_AttackPosX = 0f;
