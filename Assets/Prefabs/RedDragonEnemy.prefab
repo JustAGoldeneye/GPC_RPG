@@ -2188,7 +2188,7 @@ MonoBehaviour:
   m_Atk: 5
   m_Def: 3
   m_PlayerHPCounterText: {fileID: 1182137361127856527}
-  m_RoadBlock: {fileID: 0}
+  m_GameManger: {fileID: 0}
 --- !u!1 &1182137362251078205
 GameObject:
   m_ObjectHideFlags: 0

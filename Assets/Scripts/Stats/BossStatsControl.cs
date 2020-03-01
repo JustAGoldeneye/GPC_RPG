@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class BossStatsControl : FighterStatsControl
 {
-    public GameObject m_RoadBlock;
+    public GameObject m_GameManger;
 
     public override void OnDeath() {
-        Destroy(m_RoadBlock);
+        m_GameManger.GetComponent<FlagManager>().NotifyRedBossBeaten();
         Destroy(gameObject);
     }
 }

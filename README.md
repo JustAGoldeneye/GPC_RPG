@@ -20,6 +20,7 @@
 * Arrow Keys - Navigate on UI
 * Enter - Confirm
 * Backspace - Cancel
+* P - Pause the game
 
 ## Imported Assets
 

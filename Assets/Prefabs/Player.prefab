@@ -2387,6 +2387,10 @@ GameObject:
   - component: {fileID: 5588586255527747517}
   - component: {fileID: 125978531682779526}
   - component: {fileID: 4875030963259280357}
+  - component: {fileID: 126390150}
+  - component: {fileID: 126390151}
+  - component: {fileID: 126390154}
+  - component: {fileID: 126390155}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -2497,7 +2501,7 @@ MonoBehaviour:
   m_Attack: {fileID: 7862617344504304618, guid: db7decdeff0ff574c829b5e9c289863c,
     type: 3}
   m_ActionNameText: {fileID: 0}
-  m_CooldownSlider: {fileID: 0}
+  m_CooldownTimer: {fileID: 0}
 --- !u!114 &3725097219178506530
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2522,7 +2526,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68b8a532a38640044a30c7afca22c46a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_CooldownTime: 5
+  m_CooldownTime: 10
   m_AttackPosX: 0.75
   m_AttackPosY: 0.687
   m_AttackPosZ: 0.637
@@ -2531,7 +2535,7 @@ MonoBehaviour:
   m_Attack: {fileID: 4747371168208267812, guid: 6c384a600fc47a3449780af744500f9d,
     type: 3}
   m_ActionNameText: {fileID: 0}
-  m_CooldownSlider: {fileID: 0}
+  m_CooldownTimer: {fileID: 0}
 --- !u!114 &5588586255527747517
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2544,7 +2548,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8858e57ae0218e24aa5ced2fc99a585e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_CooldownTime: 30
+  m_CooldownTime: 15
   m_AttackPosX: 0
   m_AttackPosY: 0
   m_AttackPosZ: -2
@@ -2552,7 +2556,7 @@ MonoBehaviour:
   m_ActionName: Black Mine
   m_Attack: {fileID: 275500293145994036, guid: 02f28a010f9ddbc498d1fffc4a5eeef8, type: 3}
   m_ActionNameText: {fileID: 0}
-  m_CooldownSlider: {fileID: 0}
+  m_CooldownTimer: {fileID: 0}
 --- !u!114 &125978531682779526
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2565,9 +2569,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3686f36cb77a7a946b14eeed317b689d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_MaxHP: 70
+  m_MaxHP: 80
   m_Atk: 5
-  m_Def: 0
+  m_Def: 2
   m_PlayerHPCounterText: {fileID: 0}
 --- !u!114 &4875030963259280357
 MonoBehaviour:
@@ -2583,6 +2587,94 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_GameOverText: {fileID: 1069692043438963212, guid: 1f1d646f8ebe49146bf975347ca983ee,
     type: 3}
+--- !u!114 &126390150
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5140318121747996127}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45d26c97aefa09748a91efedb363c562, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_CooldownTime: 18
+  m_AttackPosX: 0.75
+  m_AttackPosY: 0.687
+  m_AttackPosZ: 0.637
+  m_MakeFightersChild: 1
+  m_ActionName: SUPER Power Slash
+  m_Attack: {fileID: 4747371168208267812, guid: 8a3cf6d867a6c734cac7218bdabae2f8,
+    type: 3}
+  m_ActionNameText: {fileID: 0}
+  m_CooldownTimer: {fileID: 0}
+--- !u!114 &126390151
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5140318121747996127}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5e84debb31aa4c4f8b6380fdbe839b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_CooldownTime: 15
+  m_AttackPosX: 0.75
+  m_AttackPosY: 0.687
+  m_AttackPosZ: 1.637
+  m_MakeFightersChild: 1
+  m_ActionName: Bar of Light
+  m_Attack: {fileID: 4747371168208267812, guid: fd49d3cd1c1208a47b400d4e38975d38,
+    type: 3}
+  m_ActionNameText: {fileID: 0}
+  m_CooldownTimer: {fileID: 0}
+--- !u!114 &126390154
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5140318121747996127}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2b85e97f512b27498fb8a4ebe98f1c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_CooldownTime: 20
+  m_AttackPosX: 0
+  m_AttackPosY: 1
+  m_AttackPosZ: 0
+  m_MakeFightersChild: 1
+  m_ActionName: Cubic Aura
+  m_Attack: {fileID: 4747371168208267812, guid: 7ef58c125c1392c4b96a5988ecfb5065,
+    type: 3}
+  m_ActionNameText: {fileID: 0}
+  m_CooldownTimer: {fileID: 0}
+--- !u!114 &126390155
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5140318121747996127}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 722bfd821216d8342b78260665b8bc32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_CooldownTime: 1
+  m_AttackPosX: 0
+  m_AttackPosY: 0.687
+  m_AttackPosZ: 0.637
+  m_MakeFightersChild: 0
+  m_ActionName: Double Edge
+  m_Attack: {fileID: 4747371168208267812, guid: 524e78cc2f0d8ce4cbe558a89b307710,
+    type: 3}
+  m_ActionNameText: {fileID: 0}
+  m_CooldownTimer: {fileID: 0}
 --- !u!1001 &3796020346312624817
 PrefabInstance:
   m_ObjectHideFlags: 0
