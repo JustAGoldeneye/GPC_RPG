@@ -402,6 +402,7 @@ GameObject:
   - component: {fileID: 842791339}
   - component: {fileID: 842791340}
   - component: {fileID: 4348411411749727214}
+  - component: {fileID: 6416416309472111564}
   m_Layer: 0
   m_Name: DragonEnemy
   m_TagString: Enemy
@@ -438,7 +439,7 @@ Animator:
   m_Avatar: {fileID: 9000000, guid: f14db21b5e70e3d4ab6f0e158099a341, type: 3}
   m_Controller: {fileID: 0}
   m_CullingMode: 1
-  m_UpdateMode: 0
+  m_UpdateMode: 1
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
@@ -527,7 +528,7 @@ MonoBehaviour:
   m_CooldownTime: 5
   m_AttackPosX: 0
   m_AttackPosY: 1.5
-  m_AttackPosZ: 3
+  m_AttackPosZ: 4
   m_MakeFightersChild: 1
   m_ActionName: Weak Slash
   m_Attack: {fileID: 912970106417230932, guid: 6a637b7a15b40d7499aeed80d790935b, type: 3}
@@ -561,12 +562,33 @@ MonoBehaviour:
   m_CooldownTime: 20
   m_AttackPosX: 0
   m_AttackPosY: 1.5
-  m_AttackPosZ: 3
+  m_AttackPosZ: 4
   m_MakeFightersChild: 1
   m_ActionName: Strong Slash
   m_Attack: {fileID: 7226575867549004789, guid: fbc220c9bcab5a94796a397a4e0e3728,
     type: 3}
   m_ActivationDistance: 5
+--- !u!114 &6416416309472111564
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7682079001781235437}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bde7b2837ccfa747874239cbfbeddc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_CooldownTime: 25
+  m_AttackPosX: 0
+  m_AttackPosY: 0.25
+  m_AttackPosZ: -3
+  m_MakeFightersChild: 0
+  m_ActionName: Egg Mine
+  m_Attack: {fileID: 8040005032517473698, guid: 0056365ffcce7f94290259332dadf0fa,
+    type: 3}
+  m_ActivationDistance: 10
 --- !u!1 &7682079001787286935
 GameObject:
   m_ObjectHideFlags: 0
@@ -1602,7 +1624,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:

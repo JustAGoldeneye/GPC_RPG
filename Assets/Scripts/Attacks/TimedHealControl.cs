@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TimedHealControl : MonoBehaviour
+public class TimedHealControl : HealControl
 {
     public float m_MaxLifeTime = 2f;
 

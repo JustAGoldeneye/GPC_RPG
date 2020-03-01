@@ -42,5 +42,11 @@ public class EnemyActionControl : MonoBehaviour
             m_ActioNameText.text = GetComponent<EnemyAttack2Action>().m_ActionName;
             m_TextUpdated = false;
         }
+        if (GetComponent<EnemyAttack3Action>().ExecuteIfInRange(Distance))
+        {
+            m_TextAppearTime = Time.time;
+            m_ActioNameText.text = GetComponent<EnemyAttack3Action>().m_ActionName;
+            m_TextUpdated = false;
+        }
     }
 }
