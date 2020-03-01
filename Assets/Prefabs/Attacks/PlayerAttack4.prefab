@@ -107,4 +107,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_HealAmount: 15
   m_HealTarget: All
+  m_DontDestroyOnTrigger: 1
   m_MaxLifeTime: 4

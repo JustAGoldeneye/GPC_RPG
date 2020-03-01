@@ -8,6 +8,8 @@ public class HealControl : MonoBehaviour
 
     public string m_HealTarget = "Player";
 
+    public bool m_DontDestroyOnTrigger = false;
+
     private void OnTriggerEnter(Collider collider)
     {
         if (collider.tag == m_HealTarget || (m_HealTarget == "All" && (collider.tag == "Player" || collider.tag == "Enemy")))
@@ -17,7 +19,9 @@ public class HealControl : MonoBehaviour
             {
                 FSC.Heal(m_HealAmount);
             }
-            Destroy(gameObject);
+            if (!m_DontDestroyOnTrigger) {
+                Destroy(gameObject);
+            }
         }
     }
 }

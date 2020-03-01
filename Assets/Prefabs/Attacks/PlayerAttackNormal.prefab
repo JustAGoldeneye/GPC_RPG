@@ -105,6 +105,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1e6c699b3e0a454fafd4b011a4fb6f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Damage: 2
+  m_Damage: 200
   m_AttackTarget: Enemy
   m_MaxLifeTime: 0.5
