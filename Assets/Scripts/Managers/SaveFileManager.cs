@@ -43,4 +43,17 @@ public class SaveFileManager : FileManager
     {
         WriteFile();
     }
+
+    public void DeleteSave()
+    {
+        ReadFile();
+        foreach (string[] splitRow in m_SplitRows)
+        {
+            if (splitRow[0] != "")
+            {
+                splitRow[1] = "";
+            }
+        }
+        WriteFile();
+    }
 }

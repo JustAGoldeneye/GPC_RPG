@@ -41,8 +41,8 @@ public abstract class AttackAction : MonoBehaviour
             if (m_AttackInstance.GetComponent<AttackControl>())
             {
                 m_AttackInstance.GetComponent<AttackControl>().m_Damage += gameObject.GetComponentInParent<FighterStatsControl>().m_Atk;
-                m_ActionStartTime = Time.time;
             }
+            m_ActionStartTime = Time.time;
 
             return true;
         }

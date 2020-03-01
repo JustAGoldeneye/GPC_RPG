@@ -18,4 +18,9 @@ public class UIManager : MonoBehaviour
             m_PauseMenu.GetComponent<Canvas>().enabled = !m_PauseMenu.GetComponent<Canvas>().enabled;
         }
     }
+
+    public void ClosePauseMenu()
+    {
+        m_PauseMenu.GetComponent<Canvas>().enabled = false;
+    }
 }

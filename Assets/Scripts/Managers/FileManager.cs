@@ -15,7 +15,7 @@ public class FileManager : MonoBehaviour
     private StreamReader m_Reader;
     private StreamWriter m_Writer;
 
-    private void Start()
+    private void Awake()
     {
         m_FilePath = Application.persistentDataPath + "/" + m_FileName;
         ReadFile();
