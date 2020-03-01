@@ -15,6 +15,7 @@ public class GameOver : MonoBehaviour
 
     private IEnumerator waitAndDie()
     {
+        GetComponent<PlayerMovement>().DisableControls();
         Text m_GameOverTextInstance = Text.Instantiate(m_GameOverText, new Vector3(230f, 400f, 0f), Quaternion.identity, GameObject.FindGameObjectWithTag("UI").transform);
 
         yield return new WaitForSeconds(5);

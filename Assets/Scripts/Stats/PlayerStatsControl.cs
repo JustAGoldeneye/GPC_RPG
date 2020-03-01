@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerStatsControl : FighterStatsControl
 {
-    protected override void OnDeath() {
+    public override void OnDeath() {
         GetComponent<GameOver>().Execute();
     }
 }

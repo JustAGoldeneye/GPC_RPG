@@ -8,6 +8,7 @@ public class PlayerMovement : MonoBehaviour
     public float m_TurnSpeed = 300f;
     public float m_JumpSpeed = 20f;
     public float m_JumpTime = 1f;
+    [HideInInspector] public bool m_ControlsEnabled = true;
 
     private float m_MovementInputValue;
     private float m_TurnInputValue;
@@ -32,16 +33,19 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Move();
-
-        if (m_JumpInputState && (m_IsGrounded || ((Time.time - m_JumpStartTime < m_JumpTime && m_IsJumping))))
+        if (m_ControlsEnabled)
         {
-            Jump();
-        } else {
-            m_IsJumping = false;
-        }
+            Move();
+
+            if (m_JumpInputState && (m_IsGrounded || ((Time.time - m_JumpStartTime < m_JumpTime && m_IsJumping))))
+            {
+                Jump();
+            } else {
+                m_IsJumping = false;
+            }
 
         Turn();
+        }  
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -87,5 +91,10 @@ public class PlayerMovement : MonoBehaviour
         Quaternion turnRotation = Quaternion.Euler(0f, turn, 0f);
 
         m_Rigidbody.MoveRotation(m_Rigidbody.rotation * turnRotation);
+    }
+
+    public void DisableControls()
+    {
+        m_ControlsEnabled = false;
     }
 }

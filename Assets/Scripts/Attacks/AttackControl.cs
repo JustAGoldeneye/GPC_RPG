@@ -9,13 +9,8 @@ A new subclass of this script (or some of its subclasses) should NOT be created 
 public class AttackControl : MonoBehaviour
 {
     public int m_Damage = 3;
-    public float m_MaxLifeTime = 1;
+    
     public string m_AttackTarget = "Enemy";
-
-    private void Start()
-    {
-        Destroy(gameObject, m_MaxLifeTime);
-    }
 
     private void OnTriggerEnter(Collider collider)
     {

@@ -18,12 +18,12 @@ public class FighterStatsControl : MonoBehaviour
     {
         m_HP = m_MaxHP;
         m_Dead = false;
-        SetPlayerHPCounterText();
+        SetHPCounterText();
     }
 
     public void TakeDamage(int damage)
     {
-        if (damage > m_Def)
+        if (damage > m_Def && damage > 0)
         {
             m_HP -= damage - m_Def;
             if (m_HP <= 0)
@@ -34,16 +34,29 @@ public class FighterStatsControl : MonoBehaviour
                     OnDeath();
                 }
             }
-            SetPlayerHPCounterText();
+            SetHPCounterText();
         }
     }
 
-    private void SetPlayerHPCounterText()
+    public void Heal(int heal)
+    {
+        if (heal > 0)
+        {
+            m_HP += heal;
+            if (m_HP > m_MaxHP)
+            {
+                m_HP = m_MaxHP;
+            }
+            SetHPCounterText();
+        }
+    }
+
+    private void SetHPCounterText()
     {
         m_PlayerHPCounterText.text = "HP " + m_HP + "/" + m_MaxHP;
     }
 
-    protected virtual void OnDeath()
+    public virtual void OnDeath()
     {
         Destroy(gameObject);
     }

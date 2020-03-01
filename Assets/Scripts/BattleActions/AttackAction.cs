@@ -46,4 +46,10 @@ public abstract class AttackAction : MonoBehaviour
 
         return false;
     }
+    /*
+    protected virtual void RequestAnimation()
+    {
+        Debug.Log("Animation request not defined!");
+    }
+    */
 }
